@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h1 {
+      text-align: center;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .book-list {
+      margin-top: 20px;
+    }
+    .book {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .book h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Library Management</h1>
+    <div>
+      <input type="text" id="bookTitle" placeholder="Book Title">
+      <input type="text" id="bookAuthor" placeholder="Book Author">
+      <input type="number" id="bookYear" placeholder="Published Year">
+      <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <h2>Books in the Library</h2>
+    <div id="bookList" class="book-list"></div>
+  </div>
+
+  <script>
+    const books = [];
+
+    function addBook() {
+      const title = document.getElementById('bookTitle').value;
+      const author = document.getElementById('bookAuthor').value;
+      const year = document.getElementById('bookYear').value;
+
+      if (title && author && year) {
+        const book = {
+          title: title,
+          author: author,
+          year: parseInt(year)
+        };
+
+        books.push(book);
+        displayBooks();
+        
+        // Clear input fields after adding
+        document.getElementById('bookTitle').value = '';
+        document.getElementById('bookAuthor').value = '';
+        document.getElementById('bookYear').value = '';
+      } else {
+        alert('Please fill all fields.');
+      }
+    }
+
+    function displayBooks() {
+      const bookList = document.getElementById('bookList');
+      bookList.innerHTML = '';
+
+      books.forEach((book, index) => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('book');
+        bookElement.innerHTML = `
+          <h3>${book.title}</h3>
+          <p><strong>Author:</strong> ${book.author}</p>
+          <p><strong>Year:</strong> ${book.year}</p>
+        `;
+        bookList.appendChild(bookElement);
+      });
+    }
+  </script>
+</body>
+</html>
