@@ -2,7 +2,7 @@
 ![Screenshot 2024-09-09 at 12 15 53 AM](https://github.com/user-attachments/assets/b67a31a0-ccf7-4762-8789-b6295e226539)
 
 
-Features of this Frontend:
+Features of this Frontend :
 --------------------------
 
 Book class: Contains attributes for a book and a method to display its details.
