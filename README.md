@@ -1,7 +1,7 @@
 
 ![Screenshot 2024-09-09 at 12 15 53 AM](https://github.com/user-attachments/assets/b67a31a0-ccf7-4762-8789-b6295e226539)
 
- intermediate Dart program that demonstrates object-oriented programming, handling input, and using collections. The program is a simple Library Management System that allows adding books, viewing book details, and searching for books by title.
+The program is a simple Library Management System that allows adding books, viewing book details, and searching for books by title.
  ------------------------------------------------------------------------
 
 
